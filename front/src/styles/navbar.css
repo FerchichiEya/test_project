@@ -1,0 +1,67 @@
+.navbar{
+width: 100%;
+height: 100px;
+background-color: aqua;
+display: flex;
+align-items:center ;
+justify-content: center;
+}
+.navbarC{
+    width: 93%;
+    height: 90%;
+    background-color:blanchedalmond;
+    display: flex; 
+    align-items:center ;
+    justify-content: space-between;
+
+}  
+.navMenu{
+    width: 70px;
+    height: 95%;
+display: flex;
+align-items: center;
+justify-content: center;    
+
+} 
+.navMenu svg{
+    height:     30px;
+    
+
+}
+.navContent{
+    width: 510px;
+    height: 95%;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+.navShop{
+    width: 180px;
+    height: 95%;
+    background-color: blueviolet;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+.navShop svg{
+    width: 20px;
+    fill: white;
+}
+.navTitle{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 450px;
+    gap: 40px;
+    /* background-color: brown; */
+}
+.navbarLogo{
+    width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
