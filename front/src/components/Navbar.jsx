@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/navbar.css"
 const Navbar = () => {
+  const [navHover, setnavHover] = useState(true);
   return (
     <>
     <div className='navbar'>
@@ -15,11 +16,53 @@ const Navbar = () => {
                      <img src="/assets/images/navbarLogo.png" alt="" />
                      </div>
                      <div className="navTitle">
-                        <h3>Home</h3>
-                        <h3>Shop</h3>
-                        <h3>Products</h3>
-                        <h3>Blog</h3>
+                        <div onMouseEnter={()=>setnavHover(false)} onMouseLeave={()=>setnavHover(true)}  className='navTitleicon'>
+                          <h3>Home </h3>
+                           {navHover ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg> :
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+</svg>
+}
+                          </div>
+                      
+
+                          <div onMouseEnter={()=>setnavHover(false)} onMouseLeave={()=>setnavHover(true)}  className='navTitleicon'>
+                          <h3>Shop </h3>
+                           {navHover ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg> :
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+</svg>
+}
+                          </div>
+
+                          <div onMouseEnter={()=>setnavHover(false)} onMouseLeave={()=>setnavHover(true)}  className='navTitleicon'>
+                          <h3>Products </h3>
+                           {navHover ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg> :
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+</svg>
+}
+                          </div>
+
+                          <div onMouseEnter={()=>setnavHover(false)} onMouseLeave={()=>setnavHover(true)}  className='navTitleicon'>
+                          <h3>Blog </h3>
+                           {navHover ? <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"/>
+</svg> :
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z"/>
+</svg>
+}
+                          </div>
                      </div>
+
+                     
             </div>
             <div className='navShop'>
             <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
