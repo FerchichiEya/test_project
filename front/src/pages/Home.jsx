@@ -1,46 +1,26 @@
 import React, { useState } from 'react';
 import "../styles/home.css";
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 const Home = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [animationState, setAnimationState] = useState('');
 
-  const handleSlideChange = (index) => {
-    setCurrentSlide(index);
+  const handleMoveImage = () => {
+    setAnimationState('animate');
+    // Reset the animation state after animation duration
+    setTimeout(() => setAnimationState(''), 5000); // Adjust the timeout to match the longest animation duration
   };
 
   return (
     <>
-      <Carousel
-        showArrows={true}
-        showThumbs={false}
-        showIndicators={false}
-        autoPlay={true}
-         interval={2000}
-         infiniteLoop={true}
-        onChange={handleSlideChange}
-      >
-        <div className={`home-bgi-container ${currentSlide === 0 ? 'animate' : ''}`}>
-          <img className={`im1 ${currentSlide === 0 ? 'out' : 'in'}`} src="/assets/images/img2.jpg" />
-          <img className={`im2 ${currentSlide === 0 ? 'out' : 'in'}`} src="/assets/images/img1.jpg" />
+      <div className="home-bgi-container">
+        <div className="home-bgi-content">
+          <img className={`bgi-img1 ${animationState ? 'bgi-img1-move' : ''}`} src="/assets/images/img1.jpg" alt="First Image" />
+          <img className={`bgi-img2 ${animationState ? 'bgi-img2-move' : ''}`} src="/assets/images/img2.jpg" alt="Second Image" />
+          <img className={`bgi-img5 ${animationState ? 'bgi-img5-move' : ''}`} src="/assets/images/img5.jpg" alt="Third Image" />
+          <img className={`bgi-img6 ${animationState ? 'bgi-img6-move' : ''}`} src="/assets/images/img6.jpg" alt="Fourth Image" />
         </div>
-
-        <div className={`home-bgi-container ${currentSlide === 1 ? 'animate' : ''}`}>
-          <img className={`im1 ${currentSlide === 1 ? 'out' : 'in'}`} src="/assets/images/img5.jpg" />
-          <img className={`im2 ${currentSlide === 1 ? 'out' : 'in'}`} src="/assets/images/img6.jpg" />
-        </div>
-
-        <div className={`home-bgi-container ${currentSlide === 2 ? 'animate' : ''}`}>
-          <img className={`im3 ${currentSlide === 2 ? 'out' : 'in'}`} src="/assets/images/img2.jpg" />
-          <img className={`im4 ${currentSlide === 2 ? 'out' : 'in'}`} src="/assets/images/img1.jpg" />
-        </div>
-
-        <div className={`home-bgi-container ${currentSlide === 3 ? 'animate' : ''}`}>
-          <img className={`im1 ${currentSlide === 3 ? 'out' : 'in'}`} src="/assets/images/img5.jpg" />
-          <img className={`im2 ${currentSlide === 3 ? 'out' : 'in'}`} src="/assets/images/img6.jpg" />
-        </div>
-      </Carousel>
+        <button style={{position: 'absolute'}} onClick={handleMoveImage}>Move Images</button>
+      </div>
     </>
   );
 };
